@@ -1,9 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'crypto-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  hello$ = this.http.get('/api/getData')
+  constructor(private http: HttpClient) {}
+
+  ngOnInit() {
+    this.hello$.subscribe()
+  }
 }
