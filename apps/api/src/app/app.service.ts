@@ -1,9 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { Message } from '@crypto/api-interfaces';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const CoinGecko = require('coingecko-api');
 
 @Injectable()
 export class AppService {
-  getData(): Message {
-    return { message: 'Welcome to api!' };
+  CoinGeckoClient = new CoinGecko();
+  getData(): any {
+    return this.CoinGeckoClient.coins.all();
   }
 }
