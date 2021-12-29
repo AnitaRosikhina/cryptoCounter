@@ -6,7 +6,7 @@ const CoinGecko = require('coingecko-api');
 @Injectable()
 export class AppService {
   CoinGeckoClient = new CoinGecko();
-  getData(): any {
-    return this.CoinGeckoClient.coins.all();
+  getMarketData(): any {
+    return this.CoinGeckoClient.coins.markets({per_page: 250});
   }
 }

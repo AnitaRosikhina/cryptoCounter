@@ -1,1 +1,10 @@
-
+<div class="layout">
+  <mat-form-field appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let currency of cryptoCurrencies$ | async" [value]="currency.id">
+        {{currency.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
