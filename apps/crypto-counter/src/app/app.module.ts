@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { CoinGeckoService } from './services/coin-gecko.service';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { CoinGeckoService } from './services/coin-gecko.service';
     HttpClientModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatInputModule
   ],
   providers: [CoinGeckoService],
   bootstrap: [AppComponent],
