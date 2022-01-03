@@ -1,5 +1,11 @@
+// TODO refactor all styles
 .layout {
   width: 100vw;
   height: 100vh;
-  background-color: #303030;
+  padding: 50px;
+  background-color: #7a7a7a;
+}
+
+mat-list-item {
+  margin-bottom: 20px;
 }

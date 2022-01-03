@@ -1,16 +1,36 @@
-<div class="layout">
-  <mat-form-field appearance="fill">
-    <mat-label>Crypto currency</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let currency of cryptoCurrencies$ | async" [value]="currency.id">
-        {{currency.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+<div class="layout" [formGroup]="form">
 
-  <mat-form-field appearance="fill">
-    <mat-label>Quantity of coins</mat-label>
-    <input type="number" matInput placeholder="1000">
-  </mat-form-field>
+  <mat-list>
+    <ng-container formArrayName="items">
+      <mat-list-item *ngFor="let formItem of itemsControls; let i = index">
+<!--        TODO create a component -->
+        <div [formGroup]="formItem">
+          <mat-form-field appearance="fill">
+            <mat-label>Crypto currency</mat-label>
+            <mat-select formControlName="cryptoCurrency">
+              <mat-option *ngFor="let currency of cryptoCurrencies" [value]="currency.current_price">
+                {{currency.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
 
+          <mat-form-field appearance="fill">
+            <mat-label>Quantity of coins</mat-label>
+            <!--        TODO: Only for numbers-->
+            <input placeholder="1000" matInput formControlName="quantity">
+          </mat-form-field>
+
+          <span>Sum: {{formItem.get('sum').value}}</span>
+
+          <button (click)="removeItem(i)">Remove</button>
+        </div>
+      </mat-list-item>
+    </ng-container>
+  </mat-list>
+  <!--        TODO create a component -->
+  <hr>
+  <button (click)="addItem()">Add a new one</button>
+  <!--        TODO create a component -->
+  <hr>
+  GENERAL SUM: {{sum}}
 </div>

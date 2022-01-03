@@ -8,17 +8,22 @@ import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { CoinGeckoService } from './services/coin-gecko.service';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from "@angular/material/list";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    // TODO refactor to arrays
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule,
+    ReactiveFormsModule,
   ],
   providers: [CoinGeckoService],
   bootstrap: [AppComponent],
