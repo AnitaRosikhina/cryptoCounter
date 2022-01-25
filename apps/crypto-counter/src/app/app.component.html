@@ -34,7 +34,7 @@
               </button>
             </div>
             <div class='sum_item'>
-              <div>Sum: {{formItem.get('sum').value}}</div>
+              <div>Sum: {{formItem.get('sum').value | currency:'USD':'symbol':'1.0-0'}}</div>
             </div>
           </div>
         </mat-list-item>
@@ -48,6 +48,6 @@
       <span>GENERAL</span>
       <span>SUM:</span>
     </div>
-    <div class='sum'>{{sum}}</div>
+    <div class='sum'>{{sum | currency:'USD':'symbol':'1.0-0'}}</div>
   </div>
 </div>
