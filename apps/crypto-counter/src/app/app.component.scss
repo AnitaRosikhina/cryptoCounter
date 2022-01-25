@@ -1,34 +1,122 @@
 // TODO refactor all styles
 .layout {
   width: 70%;
-  min-height: 86vh;
-  background-color: rgba(122, 122, 122, 0.58);
-  margin: 100px 0 0;
-}
+  min-height: 78vh;
+  background: linear-gradient(90deg, rgb(12, 84, 121) 12%, rgb(207, 210, 211) 79%);
+  margin: 120px 0 0;
+  padding: 40px 0 0 20px;
 
-mat-list-item {
-  margin-bottom: 20px;
+  .btn_remove {
+    border: none;
+    background-color: inherit;
+    width: 35px;
+    font-size: 20px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+  }
+
+  .sum_item {
+    border-bottom: 1px solid white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 300;
+  }
 }
 
 header {
-  background: beige;
-  height: 100px;
+  height: 120px;
   position: fixed;
   width: 100%;
   z-index: 5;
+  display: flex;
+  background: linear-gradient(0deg, rgb(12, 84, 121), rgb(207, 210, 211));
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    color: white;
+    font-size: 50px;
+    margin: 0 0 0 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 100;
+  }
+
+  .btn_add {
+    color: #0c5479;
+    border: none;
+    background: rgb(255 255 255 / 80%);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 0 20px 0 0;
+    box-shadow: 0px 1px 9px 9px rgb(255 255 255 / 40%);
+    font-size: 47px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .plus {
+      font-size: 28px;
+    }
+  }
 }
 
 .main {
   display: flex;
 
   .general_sum {
-    margin: 100px 0 0;
+    margin: 120px 0 0;
     width: 30%;
     display: flex;
     align-items: center;
+    justify-content: center;
     right: 0;
     height: 100%;
     position: fixed;
-    background: aqua;
+    color: #0c5479;
+    background: linear-gradient(270deg, rgb(12, 84, 121) 12%, rgb(207, 210, 211) 79%);
+
+    &_title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgb(255 255 255 / 90%);
+      letter-spacing: 3px;
+      font-size: 20px;
+      box-shadow: 0px 1px 9px 12px rgb(255 255 255 / 70%);
+      position: relative;
+    }
+
+    .sum {
+      width: 100px;
+      height: 100px;
+      background: rgb(255 255 255 / 90%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      box-shadow: 0px 1px 9px 12px rgb(255 255 255 / 40%);
+      position: absolute;
+      top: 51%;
+      left: 57%;
+    }
   }
+}
+
+.mat-list-base .mat-list-item {
+  height: 120px!important;
+}
+
+mat-form-field {
+  margin: 0 20px 0 0;
 }

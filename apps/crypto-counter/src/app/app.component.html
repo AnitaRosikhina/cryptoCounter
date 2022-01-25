@@ -1,15 +1,22 @@
 <header>
-  <button (click)="addItem()">Add a new one</button>
+  <div class='title'>Crypto Counter</div>
+  <div>
+    <button (click)="addItem()" class='btn_add'>
+      <span class='plus'>+</span>
+<!--      <i class="uil uil-bitcoin"></i>-->
+      <i class="uil uil-coins"></i>
+    </button>
+  </div>
 </header>
 <div class='main'>
   <div class="layout" [formGroup]="form">
-
     <mat-list>
       <ng-container formArrayName="items">
         <mat-list-item *ngFor="let formItem of itemsControls; let i = index">
           <!--        TODO create a component -->
           <div [formGroup]="formItem">
-            <mat-form-field appearance="fill">
+            <div>
+              <mat-form-field appearance="fill">
               <mat-label>Crypto currency</mat-label>
               <mat-select formControlName="cryptoCurrency">
                 <mat-option *ngFor="let currency of cryptoCurrencies" [value]="currency.current_price">
@@ -18,15 +25,18 @@
               </mat-select>
             </mat-form-field>
 
-            <mat-form-field appearance="fill">
-              <mat-label>Quantity of coins</mat-label>
-              <!--        TODO: Only for numbers-->
-              <input placeholder="1000" matInput formControlName="quantity">
-            </mat-form-field>
-
-            <span>Sum: {{formItem.get('sum').value}}</span>
-
-            <button (click)="removeItem(i)">Remove</button>
+              <mat-form-field appearance="fill">
+                <mat-label>Quantity of coins</mat-label>
+                <!--        TODO: Only for numbers-->
+                <input placeholder="1000" matInput formControlName="quantity">
+              </mat-form-field>
+              <button (click)="removeItem(i)" class='btn_remove'>
+                <i class="uil uil-trash"></i>
+              </button>
+            </div>
+            <div class='sum_item'>
+              <div>Sum: {{formItem.get('sum').value}}</div>
+            </div>
           </div>
         </mat-list-item>
       </ng-container>
@@ -36,6 +46,10 @@
     <!--        TODO create a component -->
   </div>
   <div class='general_sum'>
-    GENERAL SUM: {{sum}}
+    <div class='general_sum_title'>
+      <span>GENERAL</span>
+      <span>SUM:</span>
+    </div>
+    <div class='sum'>{{sum}}</div>
   </div>
 </div>
