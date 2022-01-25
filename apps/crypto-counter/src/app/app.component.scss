@@ -2,7 +2,6 @@
 .layout {
   width: 70%;
   min-height: 78vh;
-  background: linear-gradient(90deg, rgb(12, 84, 121) 12%, rgb(207, 210, 211) 79%);
   margin: 120px 0 0;
   padding: 40px 0 0 20px;
 
@@ -31,9 +30,9 @@ header {
   width: 100%;
   z-index: 5;
   display: flex;
-  background: linear-gradient(0deg, rgb(12, 84, 121), rgb(207, 210, 211));
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #fff;
 
   .title {
     color: white;
@@ -52,7 +51,7 @@ header {
     width: 80px;
     height: 80px;
     margin: 0 20px 0 0;
-    box-shadow: 0px 1px 9px 9px rgb(255 255 255 / 40%);
+    box-shadow: 0 1px 9px 9px rgb(255 255 255 / 40%);
     font-size: 47px;
     display: flex;
     flex-direction: row;
@@ -77,7 +76,6 @@ header {
     height: 100%;
     position: fixed;
     color: #0c5479;
-    background: linear-gradient(270deg, rgb(12, 84, 121) 12%, rgb(207, 210, 211) 79%);
 
     &_title {
       display: flex;
@@ -90,7 +88,7 @@ header {
       background: rgb(255 255 255 / 90%);
       letter-spacing: 3px;
       font-size: 20px;
-      box-shadow: 0px 1px 9px 12px rgb(255 255 255 / 70%);
+      box-shadow: 0 1px 9px 12px rgb(255 255 255 / 70%);
       position: relative;
     }
 
@@ -105,7 +103,7 @@ header {
       font-size: 17px;
       font-weight: 500;
       letter-spacing: 2px;
-      box-shadow: 0px 1px 9px 12px rgb(255 255 255 / 40%);
+      box-shadow: 0 1px 9px 12px rgb(255 255 255 / 40%);
       position: absolute;
       top: 51%;
       left: 57%;
