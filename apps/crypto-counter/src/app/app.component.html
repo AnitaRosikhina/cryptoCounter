@@ -1,20 +1,27 @@
 <header>
-  <div class='title'>Crypto Counter</div>
-  <div>
+  <div class='title'>
+    <span>Crypto&nbsp;</span>
+    <span>Counter</span>
+  </div>
+  <div class='block_add_sum'>
     <button (click)="addItem()" class='btn_add'>
       <span class='plus'>+</span>
       <i class="uil uil-coins"></i>
     </button>
+    <div class='header_sum'>
+      <span>General sum</span>
+      <span>{{sum | currency:'USD':'symbol':'1.0-0'}}</span>
+    </div>
   </div>
 </header>
 <div class='main'>
   <div class="layout" [formGroup]="form">
-    <mat-list>
+    <div class="list">
       <ng-container formArrayName="items">
-        <mat-list-item *ngFor="let formItem of itemsControls; let i = index">
+        <div class="list-item" *ngFor="let formItem of itemsControls; let i = index">
           <!--        TODO create a component -->
           <div [formGroup]="formItem">
-            <div>
+            <div class="form-item">
               <mat-form-field appearance="fill">
               <mat-label>Crypto currency</mat-label>
               <mat-select formControlName="cryptoCurrency">
@@ -37,9 +44,9 @@
               <div>Sum: {{formItem.get('sum').value | currency:'USD':'symbol':'1.0-0'}}</div>
             </div>
           </div>
-        </mat-list-item>
+        </div>
       </ng-container>
-    </mat-list>
+    </div>
     <!--        TODO create a component -->
     <!--        TODO create a component -->
   </div>
