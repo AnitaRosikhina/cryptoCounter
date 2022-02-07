@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
-import { CoinGeckoService } from "./services/coin-gecko.service";
-import { filter, map, merge } from "rxjs";
-import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { ChangeDetectionStrategy, Component, OnInit }    from '@angular/core'
+import { CoinGeckoService }                              from './services/coin-gecko.service'
+import { filter, map, merge }                            from 'rxjs'
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms'
 
 @Component({
-  selector: "crypto-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"],
+  selector: 'crypto-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent implements OnInit {
@@ -17,8 +17,9 @@ export class AppComponent implements OnInit {
 
   constructor(
     private cgs: CoinGeckoService,
-    private fb: FormBuilder
-  ) {}
+    private fb: FormBuilder,
+  ) {
+  }
 
   get items(): FormArray {
     return this.form.get('items') as FormArray
@@ -37,8 +38,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     // TODO refactor to a new function
     this.cgs.getListOfCryptoCurrencies().pipe(map(res => res.data)).subscribe(res => {
-      this.cryptoCurrencies = res;
-    });
+      this.cryptoCurrencies = res
+    })
 
     this.initForm()
   }
@@ -70,8 +71,8 @@ export class AppComponent implements OnInit {
       // TODO: DestroyService
       .pipe()
       .subscribe((fg: FormGroup) => {
-        const {cryptoCurrency, quantity} = fg.value
-        fg.get('sum').patchValue(cryptoCurrency * quantity, {emitEvent: false})
+        const { cryptoCurrency, quantity } = fg.value
+        fg.get('sum').patchValue(cryptoCurrency * quantity, { emitEvent: false })
       })
   }
 
